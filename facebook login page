@@ -1,0 +1,29 @@
+
+package com.btes;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class facebook 
+{
+
+		
+			public static void main (String[] args) throws InterruptedException
+			{
+			System.setProperty("webdriver.gecko.driver", "D:/selenium/geckodriver.exe");
+			
+		WebDriver driver=new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("http://www.facebook.com");
+		List dropdown=driver.findElements(By.tagName("select"));
+		System.out.println("total dropdown lists "+dropdown.size());
+		System.out.println(driver.getTitle());
+		driver.findElement(By.id("email")).sendKeys("ravinderb03@gmail.com");
+		Thread.sleep(5000);
+		driver.findElement(By.id("pass")).sendKeys("12345");
+		driver.findElement(By.id("u_0_o")).click();
+		
+
+		
+		}
